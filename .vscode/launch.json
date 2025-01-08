@@ -1,0 +1,29 @@
+{
+  // 使用 IntelliSense 了解相关属性。 
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "best_flutter_ui_templates",
+      "cwd": "best_flutter_ui_templates",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+    },
+    {
+      "name": "best_flutter_ui_templates (profile mode)",
+      "cwd": "best_flutter_ui_templates",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "best_flutter_ui_templates (release mode)",
+      "cwd": "best_flutter_ui_templates",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
