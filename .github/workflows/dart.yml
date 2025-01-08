@@ -1,8 +1,10 @@
 name: Dart CI
 
-on: push
-#  push:
-#    branches: [ master ]
+# 禁用发布
+disabled: true
+on:
+  push:
+    branches: [master]
 #  pull_request:
 #    branches: [ master ]
 
@@ -12,30 +14,29 @@ env:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - uses: subosito/flutter-action@v2
-      with:
-        channel: 'stable' # or: 'beta', 'dev' or 'master'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable' # or: 'beta', 'dev' or 'master'
 
-    - uses: actions/setup-java@v1
-      with:
-        java-version: '12.x'
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '12.x'
 
-    - run: flutter pub get
-      working-directory: best_flutter_ui_templates
-    # - run: flutter test
+      - run: flutter pub get
+        working-directory: best_flutter_ui_templates
+      # - run: flutter test
 
-    - name: build APK
-      run: flutter build apk
-      working-directory: best_flutter_ui_templates
+      - name: build APK
+        run: flutter build apk
+        working-directory: best_flutter_ui_templates
 
-    - name: upload APK
-      uses: actions/upload-artifact@v1
-      with:
-        name: apk
-        path: best_flutter_ui_templates/build/app/outputs/apk/release/app-release.apk
+      - name: upload APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: apk
+          path: best_flutter_ui_templates/build/app/outputs/apk/release/app-release.apk
